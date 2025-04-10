@@ -26,6 +26,7 @@
   "license": "ISC",
   "dependencies": {
     "@react-email/components": "^0.0.36",
+    "@react-email/render": "^1.0.6",
     "bcrypt": "^5.1.1",
     "bcryptjs": "^3.0.2",
     "body-parser": "^2.2.0",
@@ -36,6 +37,7 @@
     "express": "^5.1.0",
     "express-rate-limit": "^7.5.0",
     "express-validator": "^7.2.1",
+    "install": "^0.13.0",
     "joi": "^17.13.3",
     "jsonwebtoken": "^9.0.2",
     "lodash": "^4.17.21",
@@ -43,6 +45,7 @@
     "mongoose": "^8.13.2",
     "multer": "^1.4.5-lts.2",
     "nodemailer": "^6.10.0",
+    "npm": "^11.3.0",
     "resend": "^4.2.0",
     "winston": "^3.17.0"
   },
