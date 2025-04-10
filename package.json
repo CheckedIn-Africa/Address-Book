@@ -1,0 +1,46 @@
+{
+  "name": "address-api",
+  "version": "1.0.0",
+  "description": "",
+ "main": "src/app.js",
+  "scripts": {
+    "dev": "nodemon src/app.js",
+    "build": "pkg src/server.js --output=./dist/backend-app --targets=node18-linux-x64,node18-win-x64,node18-macos-x64",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "pkg": {
+    "scripts": "src/**/*.js",
+    "assets": [
+      "src/config/*.json",
+      ".env"
+    ],
+    "targets": [
+      "node18-linux-x64",
+      "node18-win-x64",
+      "node18-macos-x64"
+    ],
+    "outputPath": "dist"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "bcryptjs": "^3.0.2",
+    "body-parser": "^2.2.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^5.1.0",
+    "express-rate-limit": "^7.5.0",
+    "express-validator": "^7.2.1",
+    "jsonwebtoken": "^9.0.2",
+    "lodash": "^4.17.21",
+    "mongodb": "^6.15.0",
+    "mongoose": "^8.13.2",
+    "multer": "^1.4.5-lts.2",
+    "nodemailer": "^6.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  }
+}
