@@ -1,6 +1,7 @@
 function generateReadableShortCode({
     county,
     subCounty,
+    ward,
     buildingName,
     floor,
     unit,
@@ -10,15 +11,16 @@ function generateReadableShortCode({
 }) {
     const countyCode = (county || 'X')[0].toUpperCase(); // e.g. Nairobi -> N
     const subCountyCode = (subCounty || 'X')[0].toUpperCase(); // e.g. Langata -> L
+    const wardCode = (ward || 'X')[0].toUpperCase(); // e.g. Langata -> L
     const directionCode = streetDirection ? streetDirection.toUpperCase() : 'X'; // e.g. East -> E
 
     // For flat addresses (apartments)
     let raw;
     if (isFlat) {
-        raw = `${buildingName}-${floor}-${unit}-${Date.now()}`;
+        raw = `${wardCode}-${buildingName}-${plotNumber || 'XX'}${floor}-${unit}-${Date.now()}`;
     } else {
         // For non-flat addresses (houses)
-        raw = `${buildingName}-${plotNumber || 'XX'}-${Date.now()}`;
+        raw = `${wardCode}-${buildingName}-${plotNumber || 'XX'}-${Date.now()}`;
     }
 
     let hash = 0;

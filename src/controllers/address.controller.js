@@ -1,9 +1,45 @@
+const Address = require('../models/Address');
+
+// Create a new address
 exports.createAddress = async (req, res) => {
-    // Logic to generate + save address
-    res.status(201).json({ message: 'Address created (placeholder)' });
+    try {
+        const addressData = req.body;
+        // Automatically generate shortCode via pre-save hook
+        const newAddress = new Address(addressData);
+        const savedAddress = await newAddress.save();
+
+        res.status(201).json({
+            message: 'Address created successfully',
+            data: savedAddress,
+        });
+    } catch (error) {
+        console.error('Error creating address:', error.message);
+        res.status(500).json({
+            message: 'Failed to create address',
+            error: error.message,
+        });
+    }
 };
 
+// Get address by MongoDB ID
 exports.getAddressById = async (req, res) => {
-    // Fetch address from DB
-    res.status(200).json({ message: 'Get address by ID (placeholder)' });
+    try {
+        const addressId = req.params.id;
+        const address = await Address.findById(addressId);
+
+        if (!address) {
+            return res.status(404).json({ message: 'Address not found' });
+        }
+
+        res.status(200).json({
+            message: 'Address retrieved successfully',
+            data: address,
+        });
+    } catch (error) {
+        console.error('Error fetching address:', error.message);
+        res.status(500).json({
+            message: 'Failed to fetch address',
+            error: error.message,
+        });
+    }
 };
