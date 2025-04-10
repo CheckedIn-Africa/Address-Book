@@ -1,6 +1,7 @@
-## Project Documentation
 
-### Overview
+# Project Documentation
+
+## Overview
 
 This project involves building a full-stack application that handles the creation and management of addresses, users, and API keys. It incorporates services such as email notifications, user authentication, and API key management. The system supports geospatial queries, address validation, and API key usage with limits based on user plans. The architecture follows a service-based approach and utilizes technologies like MongoDB, Node.js, React, and React-Email for rendering email templates.
 
@@ -237,5 +238,3 @@ To contribute:
 3. Make your changes and commit: `git commit -am 'Add new feature'`.
 4. Push to the branch: `git push origin feature-branch`.
 5. Open a pull request with a detailed description of your changes.
-
----

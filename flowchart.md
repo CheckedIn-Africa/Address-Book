@@ -1,3 +1,6 @@
+
+# Flowchart
+
 graph TD
     A[User Registration] --> B[Login]
     B --> C[Generate & Validate API Key]
