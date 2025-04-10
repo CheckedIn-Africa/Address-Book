@@ -7,6 +7,10 @@ node_modules/
 /.pnp
 .pnp.js
 
+node_modules/
+.env
+
+
 # react-email-starter internal modules
 /react-email-starter/node_modules/@next/swc-darwin-x64/next-swc.darwin-x64.node
 
