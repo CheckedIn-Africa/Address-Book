@@ -78,7 +78,7 @@ To set up the project locally, you need **Docker** and **Docker Compose** instal
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/allanokothdev/address-api.git
+git clone https://github.com/CheckedIn-Africa/Address-Book.git
 cd address-api
 ```
 
