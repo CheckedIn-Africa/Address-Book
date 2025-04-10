@@ -22,6 +22,16 @@ const UserSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'ApiKey',  // Link to ApiKey model
     }],
+    plan: {
+        type: String,
+        enum: ['free', 'premium', 'enterprise'],
+        default: 'free',
+    },
+    apiUsage: {
+        type: Map,
+        of: Number,  // { '2025-04-10': 5 } => { date: number of requests made }
+        default: {}
+    }
 }, { timestamps: true });
 
 // Hash password before saving the user to the database
