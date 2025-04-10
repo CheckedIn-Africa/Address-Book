@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "nodemon src/app.js",
     "build": "pkg src/server.js --output=./dist/backend-app --targets=node18-linux-x64,node18-win-x64,node18-macos-x64",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "pkg": {
     "scripts": "src/**/*.js",
@@ -50,6 +50,8 @@
     "winston": "^3.17.0"
   },
   "devDependencies": {
-    "nodemon": "^3.1.9"
+    "jest": "^29.7.0",
+    "nodemon": "^3.1.9",
+    "supertest": "^7.1.0"
   }
 }
