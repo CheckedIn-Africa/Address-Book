@@ -79,7 +79,6 @@ AddressSchema.index({ location: '2dsphere' }); // Index for geospatial queries (
 AddressSchema.index({ county: 1, subCounty: 1, ward: 1 }); // Index for area-based filtering (county, sub-county, ward)
 AddressSchema.index({ street: 1 }); // Index for searching by street name
 AddressSchema.index({ buildingName: 1 }); // Index for building-specific queries (e.g., search by building name)
-AddressSchema.index({ shortCode: 1 }, { unique: true }); // Ensure uniqueness for the shortCode field
 
 // Pre-save hook to auto-generate a shortCode if not provided
 AddressSchema.pre('save', function (next) {

@@ -1,4 +1,4 @@
-const { createUserService, loginUserService } = require('../services/userService');
+const { createUserService, loginUserService } = require('../services/user.service');
 
 /**
  * Controller to create a new user and generate an API key

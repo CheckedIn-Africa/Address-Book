@@ -59,7 +59,6 @@ const authorize = (roles) => (req, res, next) => {
 /**
  * Middleware to validate the API Key
  */
-const ApiKey = require('../models/api.model'); // Import the ApiKey model
 
 /**
  * Middleware to validate the API key
