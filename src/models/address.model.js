@@ -18,6 +18,15 @@ const AddressSchema = new mongoose.Schema({
     // Street name of the address, required field
     street: { type: String, required: true },
 
+    // landmark of the address, required field
+    landmark: { type: String, required: true },
+
+    // image of the address, required field
+    photoUrl: { type: String, required: true },
+
+    // description of the address, required field
+    description: { type: String, required: true },
+
     // Street direction (East, West, North, South), optional field with specific allowed values
     streetDirection: {
         type: String,
@@ -45,6 +54,9 @@ const AddressSchema = new mongoose.Schema({
 
     // Plot number (as per county records), optional field
     plotNumber: { type: Number },
+
+    // Number of units in the building, optional field (e.g., "20")
+    units: { type: Number, required: true }, 
 
     // Floor number where the unit is located, optional field (e.g., "5")
     floor: { type: Number },
