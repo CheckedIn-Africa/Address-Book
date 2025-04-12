@@ -2,6 +2,8 @@ const express = require('express');
 const dotenv = require('dotenv');
 const connectDB = require('./config/db'); // MongoDB connection
 const corsMiddleware = require('./middlewares/cors'); 
+const { specs, swaggerUi } = require('../docs/swagger');
+
 
 // Load environment variables from .env file
 dotenv.config();
@@ -15,6 +17,8 @@ const app = express();
 
 // Apply Middleware
 app.use(...corsMiddleware);
+// Swagger UI
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(specs));
 
 // Import and use your routes
 app.use('/api/address', addressRoutes);

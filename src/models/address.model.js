@@ -1,6 +1,156 @@
 const mongoose = require('mongoose');
 const generateStructuredShortCode = require('../utils/generateShortCode');
 
+/**
+ * @swagger
+ * components:
+ *   schemas:
+ *     Address:
+ *       type: object
+ *       required:
+ *         - country
+ *         - county
+ *         - subCounty
+ *         - ward
+ *         - street
+ *         - landmark
+ *         - photoUrl
+ *         - description
+ *         - buildingName
+ *         - isFlat
+ *         - buildingType
+ *         - units
+ *         - distance
+ *         - location
+ *       properties:
+ *         id:
+ *           type: string
+ *           example: "507f1f77bcf86cd799439011"
+ *           description: Auto-generated MongoDB ID
+ *         country:
+ *           type: string
+ *           default: "Kenya"
+ *           example: "Kenya"
+ *         county:
+ *           type: string
+ *           default: "Nairobi"
+ *           example: "Nairobi"
+ *         subCounty:
+ *           type: string
+ *           example: "Kasarani"
+ *         ward:
+ *           type: string
+ *           example: "Mwiki"
+ *         street:
+ *           type: string
+ *           example: "Muringa Road"
+ *         landmark:
+ *           type: string
+ *           example: "Near Shell Petrol Station"
+ *         photoUrl:
+ *           type: string
+ *           format: uri
+ *           example: "https://example.com/address-photo.jpg"
+ *         description:
+ *           type: string
+ *           example: "Blue gate with security guard"
+ *         streetDirection:
+ *           type: string
+ *           enum: [West, East, North, South]
+ *           example: "North"
+ *         buildingName:
+ *           type: string
+ *           example: "Sunset Towers"
+ *         isFlat:
+ *           type: boolean
+ *           default: false
+ *           example: true
+ *         buildingType:
+ *           type: string
+ *           enum: [Residential, Commercial, Mixed]
+ *           example: "Residential"
+ *         buildingNumber:
+ *           type: number
+ *           example: 42
+ *         postalCode:
+ *           type: string
+ *           example: "00100"
+ *         plotNumber:
+ *           type: number
+ *           example: 287
+ *         units:
+ *           type: number
+ *           example: 24
+ *         floor:
+ *           type: number
+ *           example: 3
+ *         unit:
+ *           type: string
+ *           example: "SU304"
+ *         entrance:
+ *           type: string
+ *           example: "Main Gate B"
+ *         distance:
+ *           type: number
+ *           description: "Distance from main road in meters"
+ *           example: 150
+ *         location:
+ *           type: object
+ *           properties:
+ *             type:
+ *               type: string
+ *               enum: [Point]
+ *               default: "Point"
+ *             coordinates:
+ *               type: array
+ *               items:
+ *                 type: number
+ *               example: [36.8219, -1.2921]
+ *               description: "[longitude, latitude]"
+ *         shortCode:
+ *           type: string
+ *           example: "NRB-KAS-MWK-MRD-N-304"
+ *           description: Auto-generated structured code
+ *         createdAt:
+ *           type: string
+ *           format: date-time
+ *           example: "2025-04-15T09:30:00Z"
+ *         updatedAt:
+ *           type: string
+ *           format: date-time
+ *           example: "2025-04-15T09:30:00Z"
+ */
+
+/**
+ * @swagger
+ * components:
+ *   examples:
+ *     AddressCreation:
+ *       value:
+ *         country: "Kenya"
+ *         county: "Nairobi"
+ *         subCounty: "Kasarani"
+ *         ward: "Mwiki"
+ *         street: "Muringa Road"
+ *         landmark: "Near Shell Petrol Station"
+ *         photoUrl: "https://example.com/address-photo.jpg"
+ *         description: "Blue gate with security guard"
+ *         buildingName: "Sunset Towers"
+ *         isFlat: true
+ *         buildingType: "Residential"
+ *         units: 24
+ *         distance: 150
+ *         location:
+ *           type: "Point"
+ *           coordinates: [36.8219, -1.2921]
+ *     GeoQueryExample:
+ *       value:
+ *         longitude: 36.8219
+ *         latitude: -1.2921
+ *         maxDistance: 5000
+ *         buildingType: "Residential"
+ */
+
 // Address schema definition
 const AddressSchema = new mongoose.Schema({
     // Country where the address is located, defaulting to 'Kenya'
