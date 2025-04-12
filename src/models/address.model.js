@@ -40,6 +40,9 @@ const AddressSchema = new mongoose.Schema({
     // Building number, optional field (e.g., "101")
     buildingNumber: { type: Number },
 
+     // Plot number (as per county records), optional field
+    postalCode: { type: String },
+
     // Plot number (as per county records), optional field
     plotNumber: { type: Number },
 
