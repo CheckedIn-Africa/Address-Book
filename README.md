@@ -210,11 +210,4 @@ EXPOSE 3000
 # Step 7: Define the start command for the app
 CMD ["npm", "start"]
 ```
-
----
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
 ---
