@@ -1,0 +1,2 @@
+Update these markdown to include these folder Structure, under Address Book we have these folders: scripts with file deploy. (for deploying smart contract on blockchain), then we have docs, whoch has swagger.js, then we have src folder and has several sub folders which 
+include config, contracts, controllers, middlewares, models, routes, services, tests, validators, emails and utils

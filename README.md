@@ -36,11 +36,23 @@ The project is structured as follows:
 address-shortcode-generator-api/
 │
 ├── src/
-│   ├── models/            # Mongoose models (e.g., Address schema)
-│   ├── utils/             # Utility functions (e.g., shortCode generator)
+│   ├── config/            # Configuration files (e.g., database connection)
+│   ├── contracts/         # Smart contract-related files
 │   ├── controllers/       # Controllers for handling API requests
+│   ├── middlewares/       # Middleware for request validation and processing
+│   ├── models/            # Mongoose models (e.g., Address schema)
 │   ├── routes/            # Routes for API endpoints
-│   └── config/            # Configuration files (e.g., database connection)
+│   ├── services/          # Business logic and service layer
+│   ├── tests/             # Unit and integration tests
+│   ├── validators/        # Input validation logic
+│   ├── emails/            # Email templates and logic
+│   └── utils/             # Utility functions (e.g., shortCode generator)
+│
+├── scripts/
+│   └── deploy.js          # Script for deploying smart contracts on blockchain
+│
+├── docs/
+│   └── swagger.js         # Swagger documentation for the API
 │
 ├── .dockerignore          # Files to exclude from Docker image
 ├── Dockerfile             # Dockerfile to build the app container
@@ -50,11 +62,19 @@ address-shortcode-generator-api/
 └── README.md              # This file
 ```
 
-- **src/models**: Contains the Mongoose schema and models for managing address data.
-- **src/utils**: Contains utility functions like the shortCode generation logic.
-- **src/controllers**: Contains the logic for handling HTTP requests (e.g., creating and fetching addresses).
-- **src/routes**: Defines the REST API routes for interacting with the address system (e.g., POST, GET requests).
 - **src/config**: Configuration for setting up things like database connection (MongoDB).
+- **src/contracts**: Contains files related to blockchain smart contracts.
+- **src/controllers**: Contains the logic for handling HTTP requests (e.g., creating and fetching addresses).
+- **src/middlewares**: Middleware for request validation and processing.
+- **src/models**: Contains the Mongoose schema and models for managing address data.
+- **src/routes**: Defines the REST API routes for interacting with the address system (e.g., POST, GET requests).
+- **src/services**: Contains business logic and service layer for the application.
+- **src/tests**: Unit and integration tests for the application.
+- **src/validators**: Input validation logic for API requests.
+- **src/emails**: Email templates and logic for sending notifications.
+- **src/utils**: Contains utility functions like the shortCode generation logic.
+- **scripts/deploy.js**: Script for deploying smart contracts on the blockchain.
+- **docs/swagger.js**: Swagger documentation for the API.
 
 ---
 
@@ -64,6 +84,7 @@ address-shortcode-generator-api/
 - **Flexible Address Types**: Handles both flats (apartments) and non-flat addresses (houses).
 - **Human-Readable Format**: Generates shortCodes like `NL 5SU123 W`, making it easy to interpret.
 - **MongoDB Integration**: Store generated address codes and their corresponding details.
+- **Blockchain Integration**: Deploy and manage smart contracts for address verification.
 - **Dockerized Setup**: Easy to deploy and set up the application using Docker.
 
 ---
